@@ -4,13 +4,21 @@ import Link from 'next/link'
 import React from 'react'
 
 const TokenGridItem = ({data}) => {
+  console.log(`https://ipfs.io/ipfs/${data.properties.meta.image}`)
 
   return (
     <div className=" bg-darkPry lg890md:rounded-3xl rounded-2xl relative overflow-hidden">
 {/* MAIN IMAGE */}
 <Link href={`/token/${data?.token_address}`}>
     <div className=" w-full sm570:px-4 px-2 sm570:pt-6 pt-4  relative z-10 overflow-hidden">
-    <Image src={`https://ipfs.io/ipfs/${data.properties.meta.image}`} alt="token" width={200} height={300} className=" w-full lg890md:rounded-t-3xl rounded-t-2xl"/>
+          <img
+            src={`https://ipfs.io/ipfs/${data.properties.meta.image}`}
+            alt="token"
+            width={200}
+            height={300}
+            className="w-full lg890md:rounded-t-3xl rounded-t-2xl"
+          />
+
     </div>
 </Link>
 
